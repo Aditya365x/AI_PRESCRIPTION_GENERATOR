@@ -7,6 +7,7 @@ from PyPDF2 import PdfReader
 import os
 from dotenv import load_dotenv
 from langchain_huggingface import HuggingFaceEmbeddings
+import os
 
 # Load environment variables
 dotenv_path = ".env"
@@ -18,7 +19,10 @@ HF_TOKEN = os.getenv("HF_TOKEN")
 os.environ["HF_TOKEN"] = HF_TOKEN
 
 # Load FAISS index and metadata
-index = faiss.read_index("PrescriptionGEN_PROTOTYPE2/medical_index3.faiss")
+faiss_path1 = os.path.join("PrescriptionGEN_PROTOTYPE2", "medical_index3.faiss")
+index = faiss.read_index(faiss_path1)
+
+
 with open("PrescriptionGEN_PROTOTYPE2/chunk_metadata3.pkl", "rb") as f:
     chunks = pickle.load(f)
 
