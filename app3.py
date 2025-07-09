@@ -18,8 +18,8 @@ HF_TOKEN = os.getenv("HF_TOKEN")
 os.environ["HF_TOKEN"] = HF_TOKEN
 
 # Load FAISS index and metadata
-index = faiss.read_index("PrescriptionGEN_PROTOTYPE2/medical_index3.faiss")
-with open("PrescriptionGEN_PROTOTYPE2/chunk_metadata3.pkl", "rb") as f:
+index = faiss.read_index("D:/LangchainProjects/PrescriptionGEN_PROTOTYPE2/medical_index3.faiss")
+with open("D:/LangchainProjects/PrescriptionGEN_PROTOTYPE2/chunk_metadata3.pkl", "rb") as f:
     chunks = pickle.load(f)
 
 # Load embedding model via Hugging Face inference API
